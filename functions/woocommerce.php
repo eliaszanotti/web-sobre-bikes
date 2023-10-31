@@ -5,10 +5,25 @@ function wc_add_categories() {
         'slug' => 'frames',
     ));
     if (!is_wp_error($frames_category)) {
-        wp_insert_term('Taille de roues', 'product_cat', array(
+        wp_insert_term('29"', 'product_cat', array(
             'description' => 'Sous-catégorie pour la taille de roue',
             'parent' => $frames_category['term_id'],
-            'slug' => 'wheel_size',
+            'slug' => 'wheel-29',
+        ));
+        wp_insert_term('27.5"', 'product_cat', array(
+            'description' => 'Sous-catégorie pour la taille de roue',
+            'parent' => $frames_category['term_id'],
+            'slug' => 'wheel-27',
+        ));
+        wp_insert_term('26"', 'product_cat', array(
+            'description' => 'Sous-catégorie pour la taille de roue',
+            'parent' => $frames_category['term_id'],
+            'slug' => 'wheel-26',
+        ));
+        wp_insert_term('700', 'product_cat', array(
+            'description' => 'Sous-catégorie pour la taille de roue',
+            'parent' => $frames_category['term_id'],
+            'slug' => 'wheel-700',
         ));
         wp_insert_term('Type de cadre', 'product_cat', array(
             'description' => 'Sous-catégorie pour le type de cadre',
