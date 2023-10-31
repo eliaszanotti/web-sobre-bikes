@@ -1,9 +1,21 @@
 <?php
 function wc_add_categories() {
-    wp_insert_term('Cadres', 'product_cat', array(
+    $frames_category = wp_insert_term('Cadres', 'product_cat', array(
         'description' => 'Catégorie pour les cadres',
         'slug' => 'frames',
     ));
+    if (!is_wp_error($frames_category)) {
+        wp_insert_term('Taille de roues', 'product_cat', array(
+            'description' => 'Sous-catégorie pour la taille de roue',
+            'parent' => $frames_category['term_id'],
+            'slug' => 'wheel_size',
+        ));
+        wp_insert_term('Type de cadre', 'product_cat', array(
+            'description' => 'Sous-catégorie pour le type de cadre',
+            'parent' => $frames_category['term_id'],
+            'slug' => 'frame_type',
+        ));
+    }
     wp_insert_term('Pieces', 'product_cat', array(
         'description' => 'Catégorie pour les pieces detachees',
         'slug' => 'pieces',
