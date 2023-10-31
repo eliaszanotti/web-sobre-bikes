@@ -4,7 +4,7 @@
             type: 'POST',
             url: '/wp-admin/admin-ajax.php',
             data: {
-                action: 'theme_add_woocommerce_categories',
+                action: 'wc_add_categories',
             },
             success: function(response) {
                 console.log('Catégories WooCommerce ajoutées');
