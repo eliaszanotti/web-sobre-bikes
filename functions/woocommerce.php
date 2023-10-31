@@ -1,5 +1,5 @@
 <?php
-function theme_add_woocommerce_categories() {
+function wc_add_categories() {
     wp_insert_term('Cadres', 'product_cat', array(
         'description' => 'Catégorie pour les cadres',
         'slug' => 'frames',
@@ -18,5 +18,28 @@ function theme_add_woocommerce_categories() {
     ));
 }
 
-add_action('wp_ajax_theme_add_woocommerce_categories', 'theme_add_woocommerce_categories');
-add_action('wp_ajax_nopriv_theme_add_woocommerce_categories', 'theme_add_woocommerce_categories');
+add_action('wp_ajax_wc_add_categories', 'wc_add_categories');
+add_action('wp_ajax_nopriv_wc_add_categories', 'wc_add_categories');
+
+function wc_add_attributes() {
+    $attribute_slug = 'size';
+    if (!in_array($attribute_slug, wc_get_attribute_taxonomy_names())) {
+        $attribute = wc_create_attribute(array(
+            'name' => 'Taille',
+            'slug' => $attribute_slug,
+            'type' => 'select',
+            'order_by' => 'menu_order',
+            'has_archives' => false,
+        ));
+        if ($attribute) {
+            $terms = array('S', 'M', 'L', 'XL');
+            foreach ($terms as $term_name) {
+                wp_insert_term($term_name, 'pa_size', array(
+                    'slug' => sanitize_title($term_name),
+                ));
+            }
+        }
+    }
+}
+
+add_action('init', 'wc_add_attributes');
