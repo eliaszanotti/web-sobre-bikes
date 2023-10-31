@@ -39,6 +39,31 @@ function wc_add_attributes() {
                 ));
             }
         }
+    }    
+    $attribute_slug = 'color';
+    if (!in_array($attribute_slug, wc_get_attribute_taxonomy_names())) {
+        $attribute = wc_create_attribute(array(
+            'name' => 'Couleur',
+            'slug' => $attribute_slug,
+            'type' => 'select',
+            'order_by' => 'menu_order',
+            'has_archives' => false,
+        ));
+        if ($attribute) {
+            $terms = array(
+                'Noir',
+                'Blanc crème',
+                'Orange',
+                'Vert',
+                'Olive',
+                'Bleu'
+            );
+            foreach ($terms as $term_name) {
+                wp_insert_term($term_name, 'pa_color', array(
+                    'slug' => sanitize_title($term_name),
+                ));
+            }
+        }
     }
 }
 
