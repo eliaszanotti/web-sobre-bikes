@@ -35,6 +35,7 @@ Text Domain: sobre-bikes-theme
     --color-light-hover: #ffd5ad;
     --color-dark-hover: #283a3e;
     --color-blue: #222f38;
+    --color-blue-light: #515c65;
     --color-accent: #cf4731 ;
     --color-gray: #d9dbe0;
     /* Text size */
@@ -294,12 +295,74 @@ ul.main-menu-class a {
     width: 100%;
     height: 100vh;
     background-color: var(--color-blue);
-    /* height: calc(100vh - var(--color-blue)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.last-items .center-div {
+    width: var(--body-width);
+    height: calc(100% - var(--card-gap));
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: calc(var(--card-gap) / 2);
+}
+
+.last-items .product-card {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+ 
+.product-card .card-thumbnail {
+    /* border-radius: var(--border-radius) var(--border-radius) 0 0; */
+    /* overflow: hidden; */
+}
+
+img {
+    display: none;
+}
+
+.product-card .card-thumbnail img {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* user-select: none; */
+}
+
+.product-card .product-meta {
+    /* width: 100%; */
+    /* height: calc(50%); */
+    /* min-height: 50%; */
+    /* overflow: hidden; */
     /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    /* justify-content: flex-start; */
     /* flex-direction: column; */
 }
+/*
+.product-card .product-meta .product-title {
+    font-family: var(--font-title);
+    font-size: var(--h2-size);
+    color: var(--color-blue);
+    padding: 10px 10px 0 10px;
+}
+
+.product-card .product-meta .product-price {
+    font-family: var(--font-title);
+    font-size: var(--h4-size);
+    color: var(--color-accent);
+    padding: 0 10px 10px 10px;
+} */
+
+/* .product-card .product-meta p {
+    color: var(--color-blue-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-height: 10%;
+} */
 
 /* All the frames */
 /* .all-frames {
