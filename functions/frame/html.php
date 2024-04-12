@@ -27,3 +27,16 @@ function html_color_selection_metabox($post) {
         <option value='bc412d' <?php selected($frame_color, 'bc412d'); ?>>Orange</option>
     </select> <?php
 }
+
+function html_product_selection_metabox($post) {
+    $product_id = get_post_meta($post->ID, '_frame_product_id', true); ?>
+    <label for="frame_product_id">Choisissez le produit WooCommerce :</label>
+    <select id="frame_product_id" name="frame_product_id">
+        <?php
+        $products = get_posts(array('post_type' => 'product', 'numberposts' => -1));
+        foreach ($products as $product) {
+            echo '<option value="' . $product->ID . '"' . selected($product_id, $product->ID, false) . '>' . $product->post_title . '</option>';
+        }
+        ?>
+    </select> <?php
+}

@@ -25,6 +25,14 @@ function add_custom_meta_box() {
         'normal',
         'default'
     );
+    add_meta_box(
+        'frame_product',
+        'Produit WooCommerce',
+        'html_product_selection_metabox',
+        'frame',
+        'side', 
+        'default'
+    );
 }
 
 function save_custom_meta($post_id) {
@@ -42,6 +50,10 @@ function save_custom_meta($post_id) {
         $frame_color = sanitize_text_field($_POST['frame_color']);
         update_post_meta($post_id, 'frame_color', $frame_color);
         wp_set_post_terms($post_id, $frame_color, 'frame_color', false);
+    }
+    if (array_key_exists('frame_product_id', $_POST)) {
+        $product_id = sanitize_text_field($_POST['frame_product_id']);
+        update_post_meta($post_id, '_frame_product_id', $product_id);
     }
 }
 
