@@ -69,7 +69,7 @@
 
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="product-card">
+                <a href="<?php echo get_permalink(); ?>" class="product-card">
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="card-thumbnail"><?php the_post_thumbnail('large'); ?></div>
                     <?php endif ?>
@@ -84,9 +84,7 @@
                         } ?>
                         <?php the_excerpt(); ?>
                     </div>
-
-                    <a href="#TODO" class="show-more">Voir plus...</a>
-                </div>
+                </a>
             <?php endwhile;
         endif;
         
