@@ -52,6 +52,7 @@ Text Domain: sobre-bikes-theme
     --card-gap: 30px;
     --body-width: 60%;
     --border-radius: 20px;
+    --section-padding: 100px;
     /* Reset */
     background-color: var(--color-light);
 }
@@ -294,6 +295,7 @@ ul.main-menu-class a {
 .last-items {
     width: 100%;
     height: 100vh;
+    padding: var(--section-padding) 0;
     background-color: var(--color-blue);
     display: flex;
     align-items: center;
