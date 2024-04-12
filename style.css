@@ -55,6 +55,11 @@ Text Domain: sobre-bikes-theme
     background-color: var(--color-light);
 }
 
+::selection {
+    background-color: var(--color-gray);
+    color: var(--color-blue);
+}
+
 /* Global */
 h1 {
     font-family: var(--font-title);
