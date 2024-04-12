@@ -335,14 +335,11 @@ ul.main-menu-class a {
     width: 100%;
     height: 50%;
 }
-/*
+
 .product-card .product-meta .product-title {
-    font-family: var(--font-title);
-    font-size: var(--h2-size);
-    color: var(--color-blue);
     padding: 10px 10px 0 10px;
 }
-
+/*
 .product-card .product-meta .product-price {
     font-family: var(--font-title);
     font-size: var(--h4-size);
