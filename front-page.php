@@ -84,6 +84,8 @@
                         } ?>
                         <?php the_excerpt(); ?>
                     </div>
+
+                    <a href="#TODO" class="show-more">Voir plus...</a>
                 </div>
             <?php endwhile;
         endif;
