@@ -23,7 +23,7 @@
                 <div class="carousel-card card">
                     <div class="carousel-card-top">
                         <h4 class="carousel-date"><?php echo get_the_date('j F Y'); ?> | <?php echo $postTypeName ?></h4>
-                        <h1 class="carousel-title"><?php the_title(); ?></h1>
+                        <?php the_title('<h1 class="carousel-title">', '</h1>'); ?>
                         <?php if (get_post_type() == "frame") :
                             $type = get_the_terms(get_the_ID(), 'frame-type');
                             $size = get_the_terms(get_the_ID(), 'wheel-size');
@@ -56,29 +56,43 @@
 <div class="triangle-light-dark"></div>
 
 <div class="last-items">
+    <div class="center-div">
     <?php
-$args = array(
-    'post_type' => 'product',
-    'posts_per_page' => 6,
-    'orderby' => 'date',
-    'order' => 'DESC',
-);
+        $args = array(
+            'post_type' => 'product',
+            'posts_per_page' => 6,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        );
 
-$query = new WP_Query($args);
+        $query = new WP_Query($args);
 
-if ($query->have_posts()) :
-    while ($query->have_posts()) : $query->the_post();
-        // Affichez les informations du produit ici
-        the_title(); // Affichez le titre du produit
-        the_content(); // Affichez la description du produit
-    endwhile;
-endif;
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="product-card">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="card-thumbnail"><?php the_post_thumbnail('large'); ?></div>
+                    <?php endif ?>
 
-wp_reset_postdata();
-?>
-
+                    <div class="product-meta">
+                        <!-- <?php the_title('<h2 class="product-title">', '</h2>'); ?>
+                        <?php $product = wc_get_product(get_the_ID());
+                        if ($product) {
+                            echo '<div class="product-price">';
+                            echo $product->get_price_html();
+                            echo '</div>';
+                        } ?> -->
+                        <!-- <?php the_excerpt(); ?> -->
+                    </div>
+                </div>
+            <?php endwhile;
+        endif;
+        
+        wp_reset_postdata();
+    ?>
+    </div>
 </div>
-
+<!-- 
 <div class="triangle-dark-light"></div>
 <div class="triangle-dark-light"></div>
 <div class="triangle-dark-light"></div>
@@ -148,4 +162,4 @@ wp_reset_postdata();
 <!-- <div class="triangle-dark-light"></div> -->
 <!-- <div class="triangle-light-dark"></div> -->
 
-<?php get_footer() ?>
+<?php get_footer() ?> -->
