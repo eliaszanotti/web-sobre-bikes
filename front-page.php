@@ -82,7 +82,7 @@
                             echo $product->get_price_html();
                             echo '</div>';
                         } ?>
-                        <!-- <?php the_excerpt(); ?> -->
+                        <?php the_excerpt(); ?>
                     </div>
                 </div>
             <?php endwhile;

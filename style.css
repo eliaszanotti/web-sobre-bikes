@@ -333,6 +333,9 @@ ul.main-menu-class a {
 .product-card .product-meta {
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .product-card .product-meta .product-title {
@@ -346,13 +349,13 @@ ul.main-menu-class a {
     padding: 0 10px 10px 10px;
 }
 
-/* .product-card .product-meta p {
+.product-card .product-meta p {
     color: var(--color-blue-light);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    max-height: 10%;
-} */
+    overflow: hidden;
+    height: var(--h4-size);
+    flex-grow: 1;
+    margin: 10px;
+}
 
 /* All the frames */
 /* .all-frames {
