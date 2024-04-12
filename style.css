@@ -313,8 +313,7 @@ ul.main-menu-class a {
     background-color: var(--color-light);
     border-radius: var(--border-radius);
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
 }
  
@@ -339,13 +338,13 @@ ul.main-menu-class a {
 .product-card .product-meta .product-title {
     padding: 10px 10px 0 10px;
 }
-/*
+
 .product-card .product-meta .product-price {
     font-family: var(--font-title);
     font-size: var(--h4-size);
     color: var(--color-accent);
     padding: 0 10px 10px 10px;
-} */
+}
 
 /* .product-card .product-meta p {
     color: var(--color-blue-light);

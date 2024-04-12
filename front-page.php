@@ -76,12 +76,12 @@
 
                     <div class="product-meta">
                         <?php the_title('<h2 class="product-title">', '</h2>'); ?>
-                        <!-- <?php $product = wc_get_product(get_the_ID());
+                        <?php $product = wc_get_product(get_the_ID());
                         if ($product) {
                             echo '<div class="product-price">';
                             echo $product->get_price_html();
                             echo '</div>';
-                        } ?> -->
+                        } ?>
                         <!-- <?php the_excerpt(); ?> -->
                     </div>
                 </div>
