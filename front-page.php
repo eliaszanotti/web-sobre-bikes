@@ -70,6 +70,8 @@
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post(); ?>
                 <a href="<?php echo get_permalink(); ?>" class="product-card">
+                    <h2 class="product-show-more">+</h2>
+
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="card-thumbnail">
                             <h2 class="product-show-more">+</h2>
