@@ -71,7 +71,10 @@
             while ($query->have_posts()) : $query->the_post(); ?>
                 <a href="<?php echo get_permalink(); ?>" class="product-card">
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="card-thumbnail"><?php the_post_thumbnail('large'); ?></div>
+                        <div class="card-thumbnail">
+                            <h2 class="product-show-more">+</h2>
+                            <?php the_post_thumbnail('large'); ?>
+                        </div>
                     <?php endif ?>
 
                     <div class="product-meta">
