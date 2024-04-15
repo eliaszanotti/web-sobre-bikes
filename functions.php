@@ -7,6 +7,7 @@ function sbrAfterSetupTheme() {
     add_theme_support("title-tag");
     add_theme_support("post-thumbnails");
     register_nav_menu('main-menu', 'Menu principal');
+    register_nav_menu('footer-menu', 'Menu pied de page');
 }
 
 //  Enqueue styles

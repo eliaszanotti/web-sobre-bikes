@@ -126,4 +126,6 @@
     </div>
 </section>
 
+<div class="triangle-light-dark"></div>
+
 <?php get_footer() ?>
