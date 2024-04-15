@@ -53,6 +53,8 @@ Text Domain: sobre-bikes-theme
     --body-width: 60%;
     --border-radius: 20px;
     --section-padding: 100px;
+    --margin-bottom: 20px;
+    --button-padding: 1em 2em;
     /* Reset */
     background-color: var(--color-light);
 }
@@ -137,6 +139,39 @@ a:hover {
     border-radius: var(--border-radius);
 }
 
+.button-sm-light {
+    padding: var(--button-padding);
+    font-size: var(--h6-size);
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    color: var(--color-light);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.button-sm-light:hover {
+    background-color: var(--color-light);
+    color: var(--color-accent);
+}
+
+.button-sm-dark {
+    padding: var(--button-padding);
+    font-size: var(--h6-size);
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background-color: var(--color-light);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.button-sm-dark:hover {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+
 /* Reset */
 body {
     box-sizing: border-box;
@@ -192,11 +227,6 @@ ul.main-menu-class a {
     height: 100%;
     display: flex;
     align-items: center;
-}
-
-/* TMP */
-.test {
-    text-align: right;
 }
 
 /* Carousel */
@@ -272,25 +302,6 @@ ul.main-menu-class a {
     justify-content: flex-end;
 }
 
-.carousel-card-bottom a {
-    margin-left: 10px;
-    padding: 1em 2em;
-    font-size: 0.8em ;
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    color: var(--color-accent);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-    user-select: none;
-    background-color: var(--color-light);
-    box-shadow:  13px 13px 26px #151e23,
-                -13px -13px 26px #2f404d;
-}
-
-.carousel-card-bottom a:hover {
-    box-shadow: none;
-}
-
 /* Last items in the shop */
 .last-items {
     width: 100%;
@@ -306,7 +317,7 @@ ul.main-menu-class a {
 .last-items .products-title {
     width: var(--body-width);
     height: 50px;
-    padding-bottom: 20px;
+    padding-bottom: var(--margin-bottom);
     color: var(--color-light);
 }
 
@@ -384,86 +395,14 @@ ul.main-menu-class a {
     font-size: var(--h6-size);
     height: var(--h4-size);
     flex-grow: 1;
-    margin: 0 10px 20px 10px;
+    margin: 0 10px var(--margin-bottom) 10px;
 }
 
-/* All the frames */
-/* .all-frames {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.all-title {
-    color: var(--color-blue);
-    margin-bottom: var(--margin-bottom);
-}
-
-.all-cards {
-    width: var(--body-width);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: var(--grid-gap);
-}
-
-.all-card {
-    display: block;
-    width: 100%;
-    height: 30vh;
-    position: relative;
-}
-
-.all-card {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    box-shadow: 8px 8px 15px var(--color-gray),
-                -8px -8px 15px var(--color-light);
-}
-
-.all-card .all-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--color-blue);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-}
-
-.all-card:hover .all-hover {
-    opacity: 1;
-}
-
-.all-card-title {
-    color: var(--color-light);
-}
-
-.all-card-type {
-    font-family: var(--font-title);
-    color: var(--color-light);
-}
-
-.all-card-wheel {
-    color: var(--color-light);
-}
-
+/* Steel section  */
 .steel {
     height: 100vh;
     width: 100%;
-    background-color: var(--color-blue);
+    background-color: var(--color-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -474,7 +413,7 @@ ul.main-menu-class a {
     width: var(--body-width);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--grid-gap);
+    gap: var(--card-gap);
 }
 
 .steel-left-content {
@@ -489,33 +428,13 @@ ul.main-menu-class a {
 }
 
 .steel-title {
-    color: var(--color-light);
+    color: var(--color-blue);
     margin-bottom: var(--margin-bottom);
 }
 
 .steel-content p {
-    color: var(--color-gray);
+    color: var(--color-blue-light);
     width: 80%;
-}
-
-.steel-show-more {
-    padding: 1em 2em;
-    font-size: 0.8em ;
-    text-align: right;
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    color: var(--color-accent);
-    background-color: var(--color-light);
-    width: fit-content;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px var(--color-dark);
-    transition: all 0.3s ease;
-    user-select: none;
-}
-
-.steel-show-more:hover {
-    background-color: var(--color-accent);
-    color: var(--color-light);
 }
 
 .steel-center .wp-post-image {
@@ -523,9 +442,7 @@ ul.main-menu-class a {
     width: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
-    box-shadow: 8px 8px 15px #182128, 
-                -8px -8px 15px #2c3d48;
-} */
+}
 
 /* Triangle */
 .triangle-dark-light {
