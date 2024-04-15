@@ -300,6 +300,14 @@ ul.main-menu-class a {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.last-items .products-title {
+    width: var(--body-width);
+    height: 50px;
+    padding-bottom: 20px;
+    color: var(--color-light);
 }
 
 .last-items .center-div {

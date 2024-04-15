@@ -55,7 +55,8 @@
 
 <div class="triangle-light-dark"></div>
 
-<div class="last-items">
+<section class="last-items">
+    <h2 class="products-title">Les derniers produits:</h2>
     <div class="center-div">
     <?php
         $args = array(
@@ -96,15 +97,8 @@
         wp_reset_postdata();
     ?>
     </div>
-</div>
-<!-- 
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-dark-light"></div>
+</section>
+
 <div class="triangle-dark-light"></div>
 
 <section class="all-frames">
