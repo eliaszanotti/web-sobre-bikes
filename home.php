@@ -1,47 +1,30 @@
 <?php get_header(); ?>
 
 <section class="posts-section">
-	
-		<h1 class="page-title"><?php the_archive_title(); ?></h1>
-		<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+    <h2 class="title card"><?php single_post_title(); ?></h2>
+    <?php $args = array(
+        'posts_per_page' => 12,
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
 
+    $query = new WP_Query($args);
 
+	if ($query->have_posts()) :
+		while ($query->have_posts()) : $query->the_post(); ?>
+			<div class="card">
+				<div class="meta">
+					<h5 class="date"><?php echo get_the_date('j F Y'); ?></h5>
+					<?php the_title('<h2 class="post-title">', '</h2>'); ?>
+					<span class="excerpt">
+						<?php the_excerpt(); ?>
+					</span>
+				</div>			
+				<div class="thumbnail"><?php the_post_thumbnail('large'); ?></div>
+			</div>
+		<?php endwhile;
+	endif; 
+	wp_reset_postdata(); ?>
 </section>
 
-
-
-
-
-<!-- 
-<main id="main" class="site-main" role="main">
-	<header>
-		<h1 class="page-title"><?php the_archive_title(); ?></h1>
-		<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
-	</header>
-
-	<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="entry-header">
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-				</header>
-
-				<div class="entry-summary">
-					<?php the_excerpt(); ?>
-				</div>
-
-				<footer class="entry-footer">
-					<?php edit_post_link(__('Edit', 'textdomain'), '<span class="edit-link">', '</span>'); ?>
-				</footer>
-			</article>
-		<?php endwhile; ?>
-
-		<?php the_posts_navigation(); ?>
-
-	<?php else : ?>
-		<?php get_template_part('template-parts/content', 'none'); ?>
-	<?php endif; ?>
-</main> -->
-
-<!-- <?php get_sidebar(); ?> -->
 <?php get_footer(); ?>

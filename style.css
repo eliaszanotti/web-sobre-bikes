@@ -444,6 +444,105 @@ ul.main-menu-class a {
     border-radius: var(--border-radius);
 }
 
+/* Home.php page */
+.posts-section {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 400px);
+    grid-gap: calc(var(--card-gap) / 2);
+    padding: calc(var(--card-padding) / 2);
+}
+
+.posts-section .title {
+    background-color: var(--color-accent) !important;
+    box-sizing: border-box;
+    padding: var(--card-padding);
+    color: var(--color-light);
+}
+
+.posts-section .card {
+    background-color: var(--color-blue-light);
+    box-sizing: border-box;
+    padding: var(--card-padding);
+    position: relative;
+}
+
+.posts-section .card .meta {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+    padding: var(--card-padding);
+    box-sizing: border-box;
+}
+
+.posts-section .card .meta .date {
+    color: var(--color-gray);
+    font-family: var(--font-title);
+    text-transform: uppercase;
+}
+
+.posts-section .card .meta .post-title {
+    color: var(--color-light);
+}
+
+.posts-section .card .meta .excerpt p {
+    color: var(--color-gray);
+}
+
+.posts-section .card .thumbnail {
+    width: 100%;
+    height: 100%;   
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.posts-section .card .thumbnail::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #00000000 0%, var(--color-blue) 70%);
+    z-index: 1;
+}
+
+.posts-section .card .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.posts-section .card:nth-child(2),
+.posts-section .card:nth-child(12) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.posts-section .card:nth-child(3),
+.posts-section .card:nth-child(7),
+.posts-section .card:nth-child(9) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.posts-section .card:nth-child(6) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
 /* Triangle */
 .triangle-dark-light {
   border-left: 100vw solid transparent;
