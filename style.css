@@ -50,13 +50,15 @@ Text Domain: sobre-bikes-theme
     --triangle-height: 50px;
     --header-padding: 5%;
     --card-gap: 30px;
-    --body-width: 60%;
-    --border-radius: 20px;
+    --body-width: 75%;
+    --border-radius: 10px;
     --section-padding: 100px;
     --margin-bottom: 20px;
     --button-padding: 1em 2em;
+    --card-padding: 30px;
     /* Reset */
     background-color: var(--color-light);
+    box-sizing: border-box;
 }
 
 ::selection {
@@ -175,8 +177,8 @@ a:hover {
 /* Reset */
 body {
     box-sizing: border-box;
-    margin: 0;
     color: var(--color-dark);
+    margin: 0;
     padding: 0;
 }
 
@@ -305,7 +307,7 @@ ul.main-menu-class a {
 /* Last items in the shop */
 .last-items {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: var(--section-padding) 0;
     background-color: var(--color-blue);
     display: flex;
@@ -376,17 +378,14 @@ ul.main-menu-class a {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-}
-
-.product-card .product-meta .product-title {
-    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    padding: var(--card-padding);
 }
 
 .product-card .product-meta .product-price {
     font-family: var(--font-title);
     font-size: var(--h4-size);
     color: var(--color-accent);
-    padding: 0 10px 10px 10px;
 }
 
 .product-card .product-meta p {
@@ -395,12 +394,11 @@ ul.main-menu-class a {
     font-size: var(--h6-size);
     height: var(--h4-size);
     flex-grow: 1;
-    margin: 0 10px var(--margin-bottom) 10px;
 }
 
 /* Steel section  */
 .steel {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--color-light);
     display: flex;
@@ -413,7 +411,7 @@ ul.main-menu-class a {
     width: var(--body-width);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--card-gap);
+    gap: calc(var(--card-gap) / 2);
 }
 
 .steel-left-content {
@@ -421,6 +419,9 @@ ul.main-menu-class a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: var(--card-padding);
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius);
 }
 
 .steel-content {
@@ -428,12 +429,11 @@ ul.main-menu-class a {
 }
 
 .steel-title {
-    color: var(--color-blue);
-    margin-bottom: var(--margin-bottom);
+    color: var(--color-light);
 }
 
 .steel-content p {
-    color: var(--color-blue-light);
+    color: var(--color-gray);
     width: 80%;
 }
 
@@ -462,7 +462,7 @@ footer {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--card-gap);
+    gap: calc(var(--card-gap) / 2);
     background-color: var(--color-blue);
 }
 
