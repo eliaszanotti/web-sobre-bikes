@@ -36,10 +36,10 @@
                     </div>
                     <div class="carousel-card-bottom right-align">
                         <?php if (get_post_type() == "frame") : ?>
-                            <a href="<?php the_permalink(); ?>" class="carousel-show-more button-sm-light">voir le cadre</a>
+                            <a href="<?php the_permalink(); ?>" class="carousel-show-more button-sm-dark">voir le cadre</a>
                         <?php endif; ?>
                         <?php if (get_post_type() == "post") : ?>
-                            <a href="<?php the_permalink(); ?>" class="carousel-show-more button-sm-light">lire l'article</a>
+                            <a href="<?php the_permalink(); ?>" class="carousel-show-more button-sm-dark">lire l'article</a>
                         <?php endif; ?>
                     </div>
                 </div>
