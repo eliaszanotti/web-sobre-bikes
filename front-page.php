@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<section class="carousel">
+<section class="last-posts-home">
     <?php $query = new WP_Query([
         'post_type' => array('post','frame'),
         'posts_per_page' => 4,

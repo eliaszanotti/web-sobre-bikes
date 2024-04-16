@@ -231,8 +231,8 @@ ul.main-menu-class a {
     align-items: center;
 }
 
-/* Carousel */
-.carousel {
+/* Last posts Home */
+.last-posts-home {
     width: 100%;
     height: calc(100vh - var(--header-height));
     box-sizing: border-box;
@@ -242,11 +242,11 @@ ul.main-menu-class a {
     padding: calc(var(--card-padding) / 2);
 }
 
-.carousel .card:nth-child(3) {
+.last-posts-home .card:nth-child(3) {
     grid-row: span 2;
 }
 
-.carousel .card:nth-child(4) {
+.last-posts-home .card:nth-child(4) {
     grid-column: span 2;
 }
 
