@@ -46,7 +46,7 @@
     <?php
         $args = array(
             'post_type' => 'product',
-            'posts_per_page' => 6,
+            'posts_per_page' => 5,
             'orderby' => 'date',
             'order' => 'DESC',
         );
@@ -55,26 +55,20 @@
 
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post(); ?>
-                <a href="<?php echo get_permalink(); ?>" class="product-card">
-                    <h2 class="product-show-more">+</h2>
-
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="card-thumbnail">
-                            <h2 class="product-show-more">+</h2>
-                            <?php the_post_thumbnail('large'); ?>
-                        </div>
-                    <?php endif ?>
-
-                    <div class="product-meta">
-                        <?php the_title('<h2 class="product-title">', '</h2>'); ?>
+                <a href="<?php echo get_permalink(); ?>" class="card product-card">
+                    <div class="meta">
+                        <?php the_title('<h2 class="post-title product-title">', '</h2>'); ?>
                         <?php $product = wc_get_product(get_the_ID());
                         if ($product) {
-                            echo '<div class="product-price">';
+                            echo '<div class="date product-price">';
                             echo $product->get_price_html();
                             echo '</div>';
                         } ?>
-                        <?php the_excerpt(); ?>
+                        <span class="excerpt product-excerpt">
+                            <?php the_excerpt(); ?>
+                        </span>
                     </div>
+                    <div class="thumbnail"><?php the_post_thumbnail('large'); ?></div>
                 </a>
             <?php endwhile;
         endif;
