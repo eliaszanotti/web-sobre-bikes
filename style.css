@@ -282,6 +282,7 @@ ul.main-menu-class a {
 
 .card .meta .excerpt p {
     color: var(--color-gray);
+    font-size: var(--h5-size);
 }
 
 .card .thumbnail {
@@ -382,7 +383,6 @@ ul.main-menu-class a {
 
 .product-card .meta .product-excerpt p {
     color: var(--color-dark-gray);
-    font-size: var(--h5-size);
 }
 
 .product-card .thumbnail::after {
