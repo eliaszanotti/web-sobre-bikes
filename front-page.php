@@ -37,8 +37,6 @@
 </section>
 
 <div class="triangle-light-dark"></div>
-<div class="triangle-dark-light"></div>
-<div class="triangle-light-dark"></div>
 
 <section class="last-items">
     <h2 class="products-title">Les derniers produits:</h2>
@@ -79,8 +77,6 @@
 </section>
 
 <div class="triangle-dark-light"></div>
-<div class="triangle-light-dark"></div>
-<div class="triangle-dark-light"></div>
 
 <section class="steel">
     <?php $query = new WP_Query(['page_id' => 82]); ?>
@@ -89,7 +85,7 @@
             while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="steel-left-content">
                     <div class="steel-content">
-                        <h1 class="steel-title"><?php the_title() ?></h1>
+                        <h2 class="steel-title"><?php the_title() ?></h2>
                         <?php the_excerpt() ?>
                     </div>
                     <div class="right-align">

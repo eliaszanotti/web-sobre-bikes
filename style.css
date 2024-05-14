@@ -349,26 +349,12 @@ ul.main-menu-class a {
     grid-gap: calc(var(--card-gap) / 2);
 }
 
-.last-items .product-card {
-    background-color: var(--color-light);
-    border-radius: var(--border-radius);
-    /* display: grid; */
-    position: relative;
-}
-
-.last-items .product-card:nth-child(1) {
-    grid-column: span 2;
-}
-
-.last-items .product-card .product-show-more {
-    position: absolute;
-    display: none;
-    width: 100%;
-    height: 100%;
-}
-
 .product-card {
     background-color: var(--color-light);
+}
+
+.product-card:nth-child(1) {
+    grid-column: span 2;
 }
 
 .product-card .meta .product-title {
@@ -391,9 +377,9 @@ ul.main-menu-class a {
 
 /* Steel section  */
 .steel {
-    min-height: 100vh;
     width: 100%;
-    background-color: var(--color-light);
+    min-height: 100vh;
+    padding: var(--section-padding) 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -402,9 +388,11 @@ ul.main-menu-class a {
 
 .steel-center {
     width: var(--body-width);
+    height: 60vh;
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: calc(var(--card-gap) / 2);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: calc(var(--card-gap) / 2);
 }
 
 .steel-left-content {
@@ -423,11 +411,13 @@ ul.main-menu-class a {
 
 .steel-title {
     color: var(--color-light);
+    padding-bottom: var(--margin-bottom);
 }
 
 .steel-content p {
     color: var(--color-gray);
     width: 80%;
+    overflow: hidden;
 }
 
 .steel-center .wp-post-image {
@@ -435,6 +425,11 @@ ul.main-menu-class a {
     width: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
+}
+
+.steel-center .right-align {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Home.php page */
