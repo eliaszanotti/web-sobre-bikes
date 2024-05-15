@@ -10,8 +10,8 @@
             'relation' => 'OR',
             array(
                 'key' => 'product_type',
-                'value' => 'frame',
-                'compare' => '=',
+                'value' => array('cadre', 'fourche'),
+                'compare' => 'IN',
                 'post_type' => 'product',
             ),
             array(
@@ -28,6 +28,12 @@
         $postTypeObject = get_post_type_object(get_post_type());
         if ($postTypeObject) {
             $postTypeName = $postTypeObject->labels->singular_name;
+            if (get_post_type() == 'product') {
+                $productType = get_the_terms(get_the_ID(), 'product_type');
+                if ($productType && !is_wp_error($productType)) {
+                    $postTypeName = array_shift($productType)->name;
+                }
+            }
         } ?>
         <a href="<?php the_permalink(); ?>" class="card">
             <div class="meta">
