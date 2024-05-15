@@ -1,6 +1,10 @@
 <?php
-include_once(get_template_directory() . '/functions/frame-custom-post.php');
 include_once(get_template_directory() . '/functions/woocommerce.php');
+
+include_once(get_template_directory() . '/functions/html.php');
+include_once(get_template_directory() . '/functions/meta-box.php');
+include_once(get_template_directory() . '/functions/taxonomy.php');
+include_once(get_template_directory() . '/functions/utils.php');
 
 //  Theme support
 function sbrAfterSetupTheme() {
