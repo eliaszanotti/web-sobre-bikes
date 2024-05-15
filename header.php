@@ -18,5 +18,5 @@
 				'container' => ''
 			)); ?>
 		</nav>
-		<h2 class="test">mon compte + panier</h2>
+		<!-- <h2 class="test">mon compte + panier</h2> -->
     </header>
