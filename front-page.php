@@ -2,10 +2,24 @@
 
 <section class="last-posts-home">
     <?php $query = new WP_Query([
-        'post_type' => array('post','frame'),
+        'post_type' => array('post', 'product'),
         'posts_per_page' => 4,
         'orderby' => 'date',
         'order' => 'DESC',
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'product_type',
+                'value' => 'frame',
+                'compare' => '=',
+                'post_type' => 'product',
+            ),
+            array(
+                'key' => 'product_type',
+                'compare' => 'NOT EXISTS',
+                'post_type' => 'post',
+            ),
+        ),
     ]);
 
     if ($query->have_posts()) :

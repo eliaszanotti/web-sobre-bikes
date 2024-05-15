@@ -32,11 +32,20 @@ function html_product_selection_metabox($post) {
     $product_id = get_post_meta($post->ID, '_frame_product_id', true); ?>
     <label for="frame_product_id">Choisissez le produit WooCommerce :</label>
     <select id="frame_product_id" name="frame_product_id">
-        <?php
-        $products = get_posts(array('post_type' => 'product', 'numberposts' => -1));
+        <?php $products = get_posts(array('post_type' => 'product', 'numberposts' => -1));
         foreach ($products as $product) {
             echo '<option value="' . $product->ID . '"' . selected($product_id, $product->ID, false) . '>' . $product->post_title . '</option>';
-        }
-        ?>
+        } ?>
+    </select> <?php
+}
+
+// WooCommerce
+function html_product_type($post) {
+    $product_type = get_post_meta($post->ID, 'product_type', true); ?>
+    <label for="product_type">Choisissez le type de produit :</label>
+    <select id="product_type" name="product_type">
+        <option value='frame' <?php selected($product_type, 'frame'); ?>>Cadre</option>
+        <option value='fork' <?php selected($product_type, 'fork'); ?>>Fourche</option>
+        <option value='other' <?php selected($product_type, 'autre'); ?>>Autre</option>
     </select> <?php
 }
