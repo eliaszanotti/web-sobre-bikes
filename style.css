@@ -479,12 +479,15 @@ ul.main-menu-class a {
     padding: calc(var(--margin-bottom) * 3) 0;
 }
 
-.post-body .post-content {
+.post-body .post-center {
     width: var(--body-width);
     height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.post-body .post-content .post-meta {
+.post-body .post-center .post-meta {
     width: 100%;
 }
 
@@ -500,16 +503,18 @@ ul.main-menu-class a {
     font-family: var(--font-title);
 }
 
-.post-body .post-content .post-title {
+.post-body .post-center .post-title {
+    margin-bottom: var(--margin-bottom);
+    width: 100%;
+}
+
+.post-body .post-center .post-thumbnail {
+    width: 100%;
+    height: 70vh;
     margin-bottom: var(--margin-bottom);
 }
 
-.post-body .post-content .post-thumbnail {
-    width: 100%;
-    height: 70vh;
-}
-
-.post-body .post-content .post-thumbnail img {
+.post-body .post-center .post-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -517,6 +522,55 @@ ul.main-menu-class a {
     border-radius: var(--border-radius);
 }
 
+.post-body .post-center .post-content {
+    width: var(--body-width);
+}
+
+.post-center .post-content h1,
+.post-center .post-content h2,
+.post-center .post-content h3 {
+    color: var(--color-blue);
+    margin: var(--margin-bottom) 0;
+    margin-top: calc(var(--margin-bottom) * 3);
+    margin-bottom: var(--margin-bottom);
+}
+
+.post-center .post-content h4,
+.post-center .post-content h5,
+.post-center .post-content h6,
+.post-center .post-content p,
+.post-center .post-content li {
+    color: var(--color-dark-gray);
+    margin: var(--margin-bottom) 0;
+}
+
+.post-center .post-content li {
+    margin: 0;
+}
+
+.post-center .post-content li::marker {
+    color: var(--color-accent);
+}
+
+.post-center .post-content ol,
+.post-center .post-content ul {
+    padding-left: var(--margin-bottom);
+}
+
+.post-center .post-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+}
+
+.post-center .post-content a {
+    color: var(--color-accent);
+    font-size: var(--h5-size);
+    font-family: var(--font-text-regular);
+    text-decoration: underline;
+}
 
 /* Triangle */
 .triangle-dark-light {

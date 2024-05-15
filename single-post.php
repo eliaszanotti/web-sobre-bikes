@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <div class="post-body">
-	<div class="post-content">
+	<div class="post-center">
         <?php $postTypeObject = get_post_type_object(get_post_type());
         if ($postTypeObject) {
             $postTypeName = $postTypeObject->labels->singular_name;
@@ -16,6 +16,9 @@
                 <?php the_post_thumbnail(); ?>
             </div>
         <?php endif; ?>
+        <div class="post-content">
+            <?php the_content(); ?>
+        </div>
     </div>
 </div>
 
